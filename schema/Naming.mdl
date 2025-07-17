@@ -1,0 +1,11 @@
+
+  * Renaming
+
+    PK ID
+
+    FK PriorRenamingID Renaming.ID
+    FK EventID Event.ID
+
+    T Name!
+
+    U PriorRenamingID Name

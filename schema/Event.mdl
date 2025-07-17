@@ -1,0 +1,9 @@
+
+  * UserEvent
+
+    PK ID
+
+    FK AuthenticationSessionID AuthenticationSession.ID
+
+    TS Timestamp!
+

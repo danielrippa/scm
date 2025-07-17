@@ -1,0 +1,16 @@
+
+  # Activity Activation
+
+    By activating a specific Activity in a Workspace the user chooses the context where
+    changes to the filesystem will be recorded. Only one activity can be active at any point
+    in time in a specific workspace. Both the activation and deactivation are intentional (the
+    user must issue a command for this to occur).
+    The cli client updates accordingly the SCM_ACTIVITY_ID and SCM_ACTIVITY_CAPTION environment variables with the Activity identifier
+    so for convenience the user can issue a prompt $p [%SCM_ACTIVITY_ID%]$g or the corresponding one for the caption
+    or a combination of both and have the console
+    inform him about the current activity at all times. E.g. `C:\Users\DanielR [ACT-bc3f1d - Refactor sync functions]>`
+    The cli client only allows for one activity to be referenced for activation so multiple activities cannot
+    be active at the same time. If an activity was active and a the activation of a different one is requested,
+    the old one is deactivated and the requested one is set to active.
+
+    If a checkpoint is requested and no activity is active the system notifies the user and aborts the request.

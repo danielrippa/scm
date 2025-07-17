@@ -1,0 +1,60 @@
+
+  * ContentType
+
+    PK ID
+
+    B SHA!
+    T Type!
+
+    C Type IN ('TEXT', 'BINARY')
+
+    U SHA
+
+  * Content
+
+    FK ContentTypeID ContentType.ID
+
+    B SHA!
+    B Content!
+
+    U SHA Content
+
+  * ContentDelta
+
+    PK ID
+
+    FK EventID UserEvent.ID
+
+    B PriorSHA!
+    B SHA!
+
+    U PriorSHA SHA
+
+  * TextContentDelta
+
+    PK ID
+
+    FK ContentDeltaID ContentDelta.ID
+    T UniDiff
+
+    U ContentDeltaID
+
+  * BinaryContentDelta
+
+    PK ID
+
+    FK ContentDeltaID ContentDelta.ID
+    T VCDiff
+
+    U ContentDeltaID
+
+  * ContentSummary
+
+    PK ID
+    FK Name Renaming.ID
+
+  * OfflineContent
+
+    FK ContentDeltaID ContentDelta.ID
+    FK ContentSummaryID ContentSummary.ID
+

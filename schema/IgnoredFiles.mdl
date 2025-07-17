@@ -1,0 +1,14 @@
+
+  * IgnoredFilesGlobDeclaration
+
+    PK ID
+
+    FK WorkspaceID Workspace.ID
+    FK Occurred UserEvent.ID
+
+    T FileGlob!
+
+  * IgnoredFilesGlobDeprecation
+
+    FK DeclarationID IgnoredFilesGlobDeclaration.ID
+    FK Occurred UserEvent.ID

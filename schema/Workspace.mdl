@@ -1,0 +1,75 @@
+
+  * Workspace
+
+    PK ID
+
+  * WorkspaceRenaming
+
+    FK WorkspaceID Workspace.ID
+    FK RenamingID Renaming.ID
+    FK Occurred UserEvent.ID
+
+  * Folder
+
+    PK ID
+
+    FK Created UserEvent.ID
+    FK InitialLocationID FolderRelocation.ID
+
+  * WorkspaceItemRelocation
+
+    PK ID
+
+    FK CheckpointID Checkpoint.ID
+    FK PriorFolderID Folder.ID
+    FK FolderID Folder.ID
+
+  * File
+
+    PK ID
+
+    FK Created UserEvent.ID
+    FK ContentID Content.ID
+    FK InitialLocationID FolderRelocation.ID
+
+  * Checkpoint
+
+    PK ID
+
+    FK ActivityID Activity.ID
+    FK WorkspaceID Workspace.ID
+    FK EventID UserEvent.ID
+    FK PriorCheckpointID Checkpoint.ID
+
+  * FileContentChange
+
+    FK CheckpointID Checkpoint.ID
+    FK ContentDeltaID ContentDelta.ID
+
+  * WorkspaceItemDeletion
+
+    PK ID
+
+    FK CheckpointID Checkpoint.ID
+
+  * FileDeletion
+
+    FK FileID File.ID
+    FK DeletionID WorkspaceItemDeletion.ID
+
+  * FolderDeletion
+
+    FK FolderID Folder.ID
+    FK DeletionID WorkspaceItemDeletion.ID
+
+  * FileRelocation
+
+    FK FileID File.ID
+    FK RelocationID WorkspaceItemRelocation.ID
+
+  * FolderRelocation
+
+    PK ID
+
+    FK FolderID Folder.ID
+    FK RelocationID WorkspaceItemRelocation.ID

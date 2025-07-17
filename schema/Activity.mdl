@@ -1,0 +1,29 @@
+
+  * Activity
+
+    PK ID
+
+    FK InitialNameID Renaming.ID
+    FK EventID UserEvent.ID
+
+  * ActivityRelocation
+
+    PK ID
+
+    FK ActivityID Activity.ID
+    FK PriorWorkspaceID Workspace.ID
+    FK WorkspaceID Workspace.ID
+    FK EventID UserEvent.ID
+
+  * ActivityActivation
+
+    PK ID
+
+    FK ActivityLocationID ActivityRelocation.ID
+    FK Occurred UserEvent.ID
+
+  * ActitivyDeactivation
+
+    FK ActivationID ActivityActivation.ID
+    FK Occurred UserEvent.ID
+
