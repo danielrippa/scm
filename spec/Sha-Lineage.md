@@ -5,7 +5,7 @@
     The system is consistent in that the only way to synchronize content between workspaces
     is activity relocation.
 
-    The relocation starts a transacion that could fail.
+    The relocation starts a transacion that could end up with rollback.
 
     The system analyzes if it is currently possible for an activity to relocate to another workspace
     by checking if it can find evidence about sha-lineage between files with the same metadata
